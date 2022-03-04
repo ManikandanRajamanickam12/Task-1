@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final display = context.watch<ValueNotifier<int>>();
+    final display = context.watch<ValueNotifier<int>>().value;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 child: RichText(
                     text: const TextSpan(
                   text:
-                      "  A more precise measure of personal stress can be determined by using a variety of instruments that have been designed to help measure individual stress levels. The first of these is called the ",
+                      "       A more precise measure of personal stress can be determined by using a variety of instruments that have been designed to help measure individual stress levels. The first of these is called the ",
                   style:
                       TextStyle(fontSize: 20, color: Colors.black, height: 1.5),
                   children: <TextSpan>[
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               child: const Padding(
                 padding: EdgeInsets.fromLTRB(70, 30, 30, 0),
                 child: Text(
-                  "  The Perceived Stress Scale (PSS) is a classic stress assessment instrument. The tool, while originally developed in 1983, remains a popular choice for helping us understand how different situations affect our feelings and our perceived stress. The questions in this scale ask about your feelings and thoughts during the last month. In each case, you will be asked to indicate how often you felt or thought a certain way. Although some of the questions are similar, there are differences between them and you should treat each one as a separate question. The best approach is to answer fairly quickly. That is, don’t try to count up the number of times you felt a particular way; rather indicate the alternative that seems like a reasonable estimate.",
+                  "      The Perceived Stress Scale (PSS) is a classic stress assessment instrument. The tool, while originally developed in 1983, remains a popular choice for helping us understand how different situations affect our feelings and our perceived stress. The questions in this scale ask about your feelings and thoughts during the last month. In each case, you will be asked to indicate how often you felt or thought a certain way. Although some of the questions are similar, there are differences between them and you should treat each one as a separate question. The best approach is to answer fairly quickly. That is, don’t try to count up the number of times you felt a particular way; rather indicate the alternative that seems like a reasonable estimate.",
                   style:
                       TextStyle(fontSize: 20, color: Colors.black, height: 1.5),
                 ),
@@ -142,9 +142,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            ChangeNotifierProvider(
-                create: (context) => ValueNotifier(0),
-                child: Container(height: 700, child: ListViewBuilder())),
+            Container(height: 700, child: ListViewBuilder()),
             // ----------------------------------------------------1-----------------------------------------------------------------------
             Align(
               alignment: Alignment.centerLeft,

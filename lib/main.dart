@@ -13,13 +13,15 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // ignore: deprecated_member_use
-      theme: ThemeData(
-          textSelectionTheme:
-              TextSelectionThemeData(cursorColor: Colors.black)),
-      title: "Stress-Scale",
-      home: HomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        // ignore: deprecated_member_use
+        theme: ThemeData(
+            textSelectionTheme:
+                TextSelectionThemeData(cursorColor: Colors.black)),
+        title: "Stress-Scale",
+        home: ChangeNotifierProvider(
+          create: (context) => ValueNotifier(0),
+          child: HomePage(),
+        ));
   }
 }
